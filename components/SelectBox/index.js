@@ -30,7 +30,7 @@ class SelectBox extends Component {
     return (
       <>
         <Picker
-          style={{height: 50, width: 150}}
+          style={{height: 50, width: 250}}
           selectedValue={this.state.meal}
           onValueChange={this.updateMeal}>
           <Picker.Item label="Kahvaltı" value="0" />

@@ -32,18 +32,19 @@ import {
 //components
 import SelectBox from './components/SelectBox';
 import SearchView from './components/SearchView';
-
+import Home from './components/Home';
 class App extends Component {
   render() {
     return (
       <>
         <StatusBar barStyle="light-content" />
-        <View style={styles.pageContainer}>
+        {/* <View style={styles.pageContainer}>
           <View style={styles.divcontainer}>
             <SelectBox></SelectBox>
             <SearchView></SearchView>
           </View>
-        </View>
+        </View> */}
+        <Home></Home>
       </>
     );
   }
@@ -59,7 +60,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink',
   },
   divcontainer: {
+    height: '50%',
     display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
     backgroundColor: 'white',
   },
   scrollView: {
