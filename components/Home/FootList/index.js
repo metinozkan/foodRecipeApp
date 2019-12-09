@@ -14,6 +14,8 @@ import {
   Body,
   Right,
 } from 'native-base';
+const foodName = 'Tavuk Tantuni';
+const malzemeler = [''];
 const FoodCard = () => {
   return (
     <Card>
@@ -27,7 +29,7 @@ const FoodCard = () => {
           />
 
           <Body>
-            <Text>Tavuk Tantuni</Text>
+            <Text>{foodName}</Text>
             <Text note>lavaş,tavuk,turşu</Text>
             <Text note>52dk 4 kişilik</Text>
           </Body>

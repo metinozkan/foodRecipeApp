@@ -19,6 +19,9 @@ import {
 import SelectMeal from './SelectMeal';
 import FoodList from './FootList';
 import FoodDetail from './FoodDetail';
+import IngAccordion from './IngAccordion';
+const selectPage = 1;
+
 export default class AnatomyExample extends Component {
   render() {
     return (
@@ -35,13 +38,30 @@ export default class AnatomyExample extends Component {
             flexDirection: 'column',
             justifyContent: 'space-between',
           }}>
-          {/* <SelectMeal></SelectMeal>
-          <View style={{width: 50, height: 450}}></View>
-          <Button full primary>
-            <Text>Yemek Bul</Text>
-          </Button> */}
+          {selectPage == 1 ? (
+            <>
+              {/* <SelectMeal></SelectMeal> */}
+              <IngAccordion></IngAccordion>
+              <Button full primary>
+                <Text>Yemek Bul</Text>
+              </Button>
+            </>
+          ) : selectPage == 2 ? (
+            <>
+              <FoodList></FoodList>
+              <FoodList></FoodList>
+              <FoodList></FoodList>
+              <FoodList></FoodList>
+            </>
+          ) : (
+            <>
+              <FoodDetail></FoodDetail>
+              <FoodDetail></FoodDetail>
+            </>
+          )}
+
           {/* <FoodList></FoodList> */}
-          <FoodDetail></FoodDetail>
+          {/* <FoodDetail></FoodDetail> */}
         </Content>
         <Footer>
           <FooterTab>
