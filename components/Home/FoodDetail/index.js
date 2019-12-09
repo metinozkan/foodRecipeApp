@@ -13,7 +13,7 @@ import {
   Left,
   Body,
 } from 'native-base';
-export default class CardShowcaseExample extends Component {
+export default class FoodDetail extends Component {
   render() {
     return (
       <Content>

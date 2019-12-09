@@ -16,7 +16,7 @@ import {
 } from 'native-base';
 const foodName = 'Tavuk Tantuni';
 const malzemeler = [''];
-const FoodCard = () => {
+const FoodCard = props => {
   return (
     <Card>
       <CardItem>
@@ -35,19 +35,25 @@ const FoodCard = () => {
           </Body>
         </Left>
         <Right>
-          <Text>Aç</Text>
+          <Button
+            onPress={() => {
+              props.navigate('FoodDetail');
+            }}>
+            <Text>Aç</Text>
+          </Button>
         </Right>
       </CardItem>
     </Card>
   );
 };
 
-export default class CardList extends Component {
+export default class FoodList extends Component {
   render() {
+    console.log(this.props.navigation);
+
     return (
       <>
-        <FoodCard></FoodCard>
-        <FoodCard></FoodCard>
+        <FoodCard navigate={this.props.navigation.navigate}></FoodCard>
       </>
     );
   }

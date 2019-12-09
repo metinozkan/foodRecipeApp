@@ -17,60 +17,60 @@ import {
 
 //components
 import SelectMeal from './SelectMeal';
-import FoodList from './FootList';
+import FoodList from './FoodList';
 import FoodDetail from './FoodDetail';
 import IngAccordion from './IngAccordion';
+import WelcomePage from './WelcomePage';
 const selectPage = 1;
 
-export default class AnatomyExample extends Component {
+//for navigate
+import {createStackNavigator} from 'react-navigation-stack';
+import {createAppContainer} from 'react-navigation';
+
+export default class Home extends Component {
   render() {
     return (
-      <Container>
-        <Header>
-          <Body>
-            <Title>Evinizde ne var?</Title>
-          </Body>
-          <Right />
-        </Header>
-        <Content
-          contentContainerStyle={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-          }}>
-          {selectPage == 1 ? (
-            <>
-              {/* <SelectMeal></SelectMeal> */}
-              <IngAccordion></IngAccordion>
-              <Button full primary>
-                <Text>Yemek Bul</Text>
-              </Button>
-            </>
-          ) : selectPage == 2 ? (
-            <>
-              <FoodList></FoodList>
-              <FoodList></FoodList>
-              <FoodList></FoodList>
-              <FoodList></FoodList>
-            </>
-          ) : (
-            <>
-              <FoodDetail></FoodDetail>
-              <FoodDetail></FoodDetail>
-            </>
-          )}
-
-          {/* <FoodList></FoodList> */}
-          {/* <FoodDetail></FoodDetail> */}
-        </Content>
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>Tüm hakları halka açıktır</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-      </Container>
+      <View style={{height: 100, width: 100, backgroundColor: 'red'}}></View>
     );
   }
 }
+
+export const AppNavigator = createAppContainer(
+  createStackNavigator(
+    {
+      WelcomePage: {
+        screen: WelcomePage,
+        navigationOptions: {
+          header: (
+            <Header>
+              <Body>
+                <Title>Evinizde ne var?</Title>
+              </Body>
+            </Header>
+          ),
+        },
+      },
+
+      FoodList: {
+        screen: FoodList,
+        navigationOptions: {
+          title: 'Yemek Listesi',
+          headerBackTitle: '',
+          headerStyle: {
+            headerBackground: 'red',
+          },
+        },
+      },
+      FoodDetail: {
+        screen: FoodDetail,
+        navigationOptions: {
+          title: 'Yemek Tarifi',
+          headerBackTitle: '',
+        },
+      },
+    },
+    {
+      initialRouteName: 'WelcomePage',
+    },
+  ),
+);
