@@ -57,7 +57,11 @@ export const AppNavigator = createAppContainer(
           title: 'Yemek Listesi',
           headerBackTitle: '',
           headerStyle: {
-            headerBackground: 'red',
+            backgroundColor: '#3F51B5',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
           },
         },
       },
@@ -66,6 +70,13 @@ export const AppNavigator = createAppContainer(
         navigationOptions: {
           title: 'Yemek Tarifi',
           headerBackTitle: '',
+          headerStyle: {
+            backgroundColor: '#3F51B5',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
         },
       },
     },
