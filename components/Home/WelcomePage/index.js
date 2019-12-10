@@ -11,13 +11,15 @@ import {
   Text,
   Button,
 } from 'native-base';
+import {ImageBackground} from 'react-native';
 
 import SelectMeal from '../SelectMeal';
-
+import SelectIngredients from '../SelectIngredients';
 export default class WelcomePage extends Component {
   render() {
     return (
-      <View
+      <ImageBackground
+        source={require('../../bg.jpg')}
         style={{
           height: '100%',
           width: '100%',
@@ -27,7 +29,7 @@ export default class WelcomePage extends Component {
         }}>
         <SelectMeal></SelectMeal>
         <View>
-          <Text>buraya picker gelecek</Text>
+          <SelectIngredients></SelectIngredients>
         </View>
         <View
           style={{
@@ -44,7 +46,7 @@ export default class WelcomePage extends Component {
             <Text>Yemek Bul</Text>
           </Button>
         </View>
-      </View>
+      </ImageBackground>
     );
   }
 }

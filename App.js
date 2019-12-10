@@ -42,8 +42,7 @@ import {
 } from 'native-base';
 
 //components
-import SelectBox from './components/SelectBox';
-import SearchView from './components/SearchView';
+
 import Home from './components/Home';
 import {AppNavigator} from './components/Home';
 class App extends Component {

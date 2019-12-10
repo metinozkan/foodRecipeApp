@@ -23,7 +23,7 @@ export default class PickerInputExample extends Component {
   render() {
     console.log(this.state.selected2);
     return (
-      <Form>
+      <Form style={{marginTop: 5, backgroundColor: '#fff'}}>
         <Item picker>
           <Picker
             mode="dropdown"
@@ -34,6 +34,7 @@ export default class PickerInputExample extends Component {
             placeholderIconColor="#007aff"
             selectedValue={this.state.selected2}
             onValueChange={this.onValueChange2.bind(this)}>
+            <Picker.Item enable label="Lütfen öğün seçiniz" value="key0" />
             <Picker.Item label="Kahvaltı" value="key0" />
             <Picker.Item label="Öğle Yemeği" value="key1" />
             <Picker.Item label="Akşam Yemeği" value="key2" />
