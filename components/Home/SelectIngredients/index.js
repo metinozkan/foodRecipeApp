@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import {View} from 'react-native';
 import SectionedMultiSelect from 'react-native-sectioned-multi-select';
 
-const items = [
+export const items = [
   // this is the parent or 'item'
   {
-    name: 'Fruits',
+    name: 'Meyveler',
     id: 0,
     // these are the children or 'sub items'
     children: [
@@ -55,11 +55,14 @@ export default class SelectIngredients extends Component {
           items={items}
           uniqueKey="id"
           subKey="children"
-          selectText="Choose some things..."
+          selectText="Evinizdeki malzemeleri seçiniz..."
           showDropDowns={true}
           readOnlyHeadings={true}
           onSelectedItemsChange={this.onSelectedItemsChange}
           selectedItems={this.state.selectedItems}
+          confirmText="Seç"
+          searchPlaceholderText="Malzeme arayın"
+          selectedText=" adet Seçildi"
         />
       </View>
     );
