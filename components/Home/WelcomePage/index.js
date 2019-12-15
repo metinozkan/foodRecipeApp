@@ -26,13 +26,14 @@ export default class WelcomePage extends Component {
       selectedItems: [],
       selectedMeal: "",
       isLoading:true,
-      allIngredients:['']
+      allIngredients:[''],
+      foodRecipes:[''],
 
     };
   }
   onSelectedItemsChange = selectedItems => {
     this.setState({selectedItems});
-    console.log(this.state.selectedItems,"sadasdasd");
+   // console.log(this.state.selectedItems,"sadasdasd");
 
   };
   onValueChangeMeal(value) {
@@ -41,18 +42,25 @@ export default class WelcomePage extends Component {
     });
   }
   getFoodRecipe=(idArray)=>{
-    console.log(idArray);
+    
 
 
-    return fetch('http://51.136.56.78:3000/foods/calculate',{
-      method:"POST",
-      headers:new Headers({
-        'Content-Type':'application/raw',
-
+    return fetch('http://51.136.56.78:3000/foods/calculate', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ingredient: idArray,
       }),
-      body:JSON.stringify({"ingredient":[7,6,5,4]})
-    }).then((response)=>response.json()).then((responseJson)=>{
-      console.log(responseJson)
+    })
+    .then((response)=>response.json()).then((responseJson)=>{
+    //  console.log(responseJson)
+    this.setState({
+      foodRecipes:responseJson
+    })
+    //,console.log(this.state.foodRecipes)
     })
   }
 
