@@ -142,9 +142,11 @@ export default class WelcomePage extends Component {
           <Button
             primary
             onPress={() => {
-              this.state.selectedMeal && this.state.selectedItems &&this.state.foodRecipes&&
+              console.log(this.state.foodRecipes.filter(x=>x.type==this.state.selectedMeal).length)
+              this.state.foodRecipes.filter(recipe=>recipe.type==this.state.selectedMeal).length ==0 ? (alert("Yemek bulunamadı")) :(
+              this.state.selectedMeal &&
               this.props.navigation.navigate('FoodList',{
-                foodRecipes:this.state.foodRecipes.filter(x=>x.type==this.state.selectedMeal),})
+                foodRecipes:this.state.foodRecipes.filter(x=>x.type==this.state.selectedMeal),}))
             //     foodRecipes:[
             //       {
             //           "id": 2,

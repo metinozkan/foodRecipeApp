@@ -6,7 +6,7 @@ export const items = [
   // this is the parent or 'item'
   {
     name: 'Sebze',
-    id: 0,
+    id: 1,
     // these are the children or 'sub items'
     children: [
       {
@@ -21,16 +21,56 @@ export const items = [
         name: 'Salatalık',
         id: 7,
       },
+      {
+        name:"Maydonoz",
+        id:14
+      },
+      {
+        name:"Asma yaprağı",
+        id:15
+      },
+      {
+        name:"Sivri biber",
+        id:21
+      },
+      {name:"Limon",
+      id:30
+    },
+    {
+      name:"Nane",
+      id:32
+    },
      
     ],
   },
+  {name:'Meyve',
+   id:2,
+  children:[
+   {
+    name:"Elma",
+    id:19
+  },
+  {
+    name:"Çilek",
+    id:20
+  },
+  
 
+]},
     {name:'Baharat',
-      id:2,
+      id:3,
     children:[
       {
-        name:"tuz",
+        name:"Tuz",
         id:9
+      },
+      {
+        name:"Karabiber",
+        id:12
+      },
+      {
+        name:"Pul biber",
+        id:13
       },
 
     ]},
@@ -48,21 +88,74 @@ export const items = [
      {
       name:"Tereyağı",
       id:10,
-     }]},
+     },
+    
+     {
+       name:"Kıyma",
+       id:11
+     },
+     {name:"Data eti",
+    
+     id:33}
+   
+    ]},
+    
+    {name:'Baklagil',
+    id:5,
+  children:[
+    {
+      name:"Pirinç",
+      id:17
+    },
+    {
+      name:"Bulgur",
+      id:18
+    },
+    {
+      name:"Nohut",
+      id:22
+    },
+    {
+      name:"Arpa şehriye",
+      id:29
+    },
+
+  ]},
+
     {name:'Diğer',
-      id:3,
+      id:6,
     children:[
       {
-        name:"şeker",
+        name:"Şeker",
         id:5,
       },
       {
-        name:"un",
+        name:"Un",
         id:4
       }
       ,{
-        name:"salça",
+        name:"Salça",
         id:2
+      },
+      {
+        name:"Ayçiçek yağı",
+        id:23
+      },
+      {
+        name:"Sarımsak",
+        id:24
+      },
+      {
+        name:"İrmik",
+        id:25
+      },
+      {
+        name:"Vanilya",
+        id:27
+      },
+      {
+      name:"Krem şanti",
+      id:28
       }
 
     ]},
