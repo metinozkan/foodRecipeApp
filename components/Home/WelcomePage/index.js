@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import {
-  Container,
-  Header,
-  Content,
   Form,
   Item,
   Picker,
@@ -16,7 +13,6 @@ import {ImageBackground} from 'react-native';
 import SectionedMultiSelect from 'react-native-sectioned-multi-select';
 
 
-//import SelectMeal from '../SelectMeal';
 import SelectIngredients,{items} from '../SelectIngredients';
 export default class WelcomePage extends Component {
 
@@ -33,7 +29,6 @@ export default class WelcomePage extends Component {
   }
   onSelectedItemsChange = selectedItems => {
     this.setState({selectedItems});
-   // console.log(this.state.selectedItems,"sadasdasd");
 
   };
   onValueChangeMeal(value) {

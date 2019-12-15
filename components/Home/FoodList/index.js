@@ -1,9 +1,5 @@
 import React, {Component} from 'react';
-import {Image} from 'react-native';
 import {
-  Container,
-  Header,
-  Content,
   Card,
   CardItem,
   Thumbnail,
@@ -13,13 +9,8 @@ import {
   Left,
   Body,
   Right,
-  View
 } from 'native-base';
-const foodName = 'Tavuk Tantuni';
-const malzemeler = [''];
 const FoodCard =(props) => {
-//  console.log(props.getParam('foodRecipes'));
-//console.log(props.foodRecipes)
 const foodRecipe=props.foodRecipes
   return (
     props.foodRecipes.map(x=>

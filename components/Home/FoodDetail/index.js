@@ -1,15 +1,10 @@
 import React, {Component} from 'react';
-import {Image} from 'react-native';
 import {
-  Container,
-  Header,
   Content,
   Card,
   CardItem,
   Thumbnail,
   Text,
-  Button,
-  Icon,
   Left,
   Body,
 } from 'native-base';
@@ -17,7 +12,6 @@ export default class FoodDetail extends Component {
   render() {
 
     const {navigation}=this.props;
-    //console.log(navigation.getParam("foodRecipe"));
     const foodRecipe=navigation.getParam("foodRecipe");
 
     return (
@@ -44,10 +38,7 @@ export default class FoodDetail extends Component {
        </CardItem>
        <CardItem>
          <Body style={{ width: 200, flex: 1}}>
-           {/* <Image
-               source={{uri: 'Image URL'}}
-               style={{height: 200, width: 200, flex: 1}}
-             /> */}
+         
            <Text>
             {x.recipe}
            </Text>
