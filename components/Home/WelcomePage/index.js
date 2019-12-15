@@ -25,6 +25,8 @@ export default class WelcomePage extends Component {
     this.state = {
       selectedItems: [],
       selectedMeal: "",
+      isLoading:true,
+      allIngredients:['']
 
     };
   }
@@ -37,6 +39,23 @@ export default class WelcomePage extends Component {
     });
   }
 
+  componentDidMount=()=>{
+    return fetch('http://51.136.56.78:3000/ingredients/all')
+    .then((response) => response.json())
+    .then((responseJson) => {
+
+      this.setState({
+        isLoading: false,
+        allIngredients: responseJson.result,
+      }, function(){
+        console.log(responseJson.result.filter(x=>x.type=="sebze" ? x:null))
+      });
+
+    })
+    .catch((error) =>{
+      console.error(error);
+    });
+  }
   render() {
     return (
       <ImageBackground
