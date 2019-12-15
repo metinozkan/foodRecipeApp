@@ -32,11 +32,28 @@ export default class WelcomePage extends Component {
   }
   onSelectedItemsChange = selectedItems => {
     this.setState({selectedItems});
+    console.log(this.state.selectedItems,"sadasdasd");
+
   };
   onValueChangeMeal(value) {
     this.setState({
       selectedMeal: value,
     });
+  }
+  getFoodRecipe=(idArray)=>{
+    console.log(idArray);
+
+
+    return fetch('http://51.136.56.78:3000/foods/calculate',{
+      method:"POST",
+      headers:new Headers({
+        'Content-Type':'application/raw',
+
+      }),
+      body:JSON.stringify({"ingredient":[7,6,5,4]})
+    }).then((response)=>response.json()).then((responseJson)=>{
+      console.log(responseJson)
+    })
   }
 
   componentDidMount=()=>{
@@ -48,7 +65,7 @@ export default class WelcomePage extends Component {
         isLoading: false,
         allIngredients: responseJson.result,
       }, function(){
-        console.log(responseJson.result.filter(x=>x.type=="sebze" ? x:null))
+      //  console.log(responseJson.result.filter(x=>x.type=="sebze" ? x:null))
       });
 
     })
@@ -115,7 +132,8 @@ export default class WelcomePage extends Component {
           <Button
             primary
             onPress={() => {
-              this.props.navigation.navigate('FoodList');
+            //  this.props.navigation.navigate('FoodList');
+            this.getFoodRecipe(this.state.selectedItems);
             }}
             style={{marginBottom: 5}}>
             <Text>Yemek Bul</Text>
