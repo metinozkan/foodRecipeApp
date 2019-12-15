@@ -37,9 +37,7 @@ export default class WelcomePage extends Component {
     });
   }
   getFoodRecipe=(idArray)=>{
-    
-
-
+ 
     return fetch('http://51.136.56.78:3000/foods/calculate', {
       method: 'POST',
       headers: {
@@ -59,24 +57,25 @@ export default class WelcomePage extends Component {
     })
   }
 
-  componentDidMount=()=>{
-    return fetch('http://51.136.56.78:3000/ingredients/all')
-    .then((response) => response.json())
-    .then((responseJson) => {
+  // componentDidMount=()=>{
+  //   return fetch('http://51.136.56.78:3000/ingredients/all')
+  //   .then((response) => response.json())
+  //   .then((responseJson) => {
 
-      this.setState({
-        isLoading: false,
-        allIngredients: responseJson.result,
-      }, function(){
-      //  console.log(responseJson.result.filter(x=>x.type=="sebze" ? x:null))
-      });
+  //     this.setState({
+  //       isLoading: false,
+  //       allIngredients: responseJson.result,
+  //     }, function(){
+  //     //  console.log(responseJson.result.filter(x=>x.type=="sebze" ? x:null))
+  //     });
 
-    })
-    .catch((error) =>{
-      console.error(error);
-    });
-  }
+  //   })
+  //   .catch((error) =>{
+  //     console.error(error);
+  //   });
+  // }
   render() {
+    console.log("ögün secmişmi",this.state.selectedMeal)
     return (
       <ImageBackground
         source={require('../../bg.jpg')}
@@ -100,10 +99,12 @@ export default class WelcomePage extends Component {
             placeholderIconColor="#007aff"
             selectedValue={this.state.selectedMeal}
             onValueChange={this.onValueChangeMeal.bind(this)}>
-            <Picker.Item enable label="Lütfen öğün seçiniz" value="key0" />
-            <Picker.Item label="Kahvaltı" value="key0" />
-            <Picker.Item label="Öğle Yemeği" value="key1" />
-            <Picker.Item label="Akşam Yemeği" value="key2" />
+            <Picker.Item enable label="Lütfen yemek türü seçiniz"/>
+            <Picker.Item label="Kahvaltı" value="1" />
+            <Picker.Item label="Öğle Yemeği" value="2" />
+            <Picker.Item label="Akşam Yemeği" value="3" />
+            <Picker.Item label="Tatlı" value="4" />
+
           </Picker>
         </Item>
       </Form>
@@ -157,7 +158,7 @@ export default class WelcomePage extends Component {
                   {
                     "id": 3,
                     "name": "Salatalık",
-                    "type": 2,
+                    "type": 1,
                     "recipe": "Unu bir derin kabın içine alın. Ortasını havuz şeklinde açın. Yumurtaları ve eritilmiş tereyağı ilave edin.\n\nHamuru güzelce yoğurun. Ardından streç filmle sararak 30 dakika kadar buzdolabında dinlendirin.\n\nİç harcı için:\nDerin bir tencerenin içerisine tereyağını alın. Kıymayı ilave ederek güzelce kavurun. Üzerine tuz ilave edin. Karıştırıp ocaktan alın ve oda sıcaklığında soğumaya bırakın.\n\nDomates sosu için:\nBir sos tenceresinin içerisine tereyağını alın. Sarımsağı rendeleyerek içerisine ilave edin ve hafifçe soteleyin.\n\nArdından domatesleri ekleyin ve kıvam alana kadar yaklaşık 5-12 dakika kadar karıştırarak pişirin.\n\nKıvam aldığında ocaktan alın, tuz ve baharatlarını ilave ederek dinlenmeye bırakın.\n\nBirleştirme aşaması:\nHazırladığınız makarna hamurundan ceviz büyüklüğünde bezeler elde edin.\n\nHafif unlanmış tezgahın üzerinde bezeleri hafifçe açın.\n\nOrtasına harçtan ilave edin. Üzerini de yine aynı şekilde açılmış hamurla kapatın.\n\nYarım şeklinde kapatın ve uçlarından birleştirin. Tüm hamura ve harca bu işlemi uygulayın.\n\nArdından bol su dolu, hafif yağ damlatılmış ve tuz eklenmiş bir tencerenin içerisine hazırladığınız tortellini'leri ekleyin. Damak zevkinize göre al dante ya da tam pişmiş şekilde pişirin.\n\nÇıkarıp süzdürerek bir tabağın içine aktarın. Üzerine domates sosu gezdirerek ve peynir ekleyerek servis edin.",
                     "photo": "https://st.depositphotos.com/3159685/4268/i/950/depositphotos_42682481-stock-photo-tortellini-with-tomato-sauce.jpg",
                     "calorie": 322,
@@ -167,7 +168,7 @@ export default class WelcomePage extends Component {
                     "time":"5dk",
                     "personCount":"4"
                 }
-                 ], });
+                 ].filter(x=>x.type==this.state.selectedMeal), });
             //this.getFoodRecipe(this.state.selectedItems);
             }}
             style={{marginBottom: 5}}>
