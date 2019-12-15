@@ -16,7 +16,9 @@ import {
 } from 'native-base';
 const foodName = 'Tavuk Tantuni';
 const malzemeler = [''];
-const FoodCard = props => {
+const FoodCard =(props, {foodRecipes}) => {
+//  console.log(props.getParam('foodRecipes'));
+console.log(foodRecipes)
   return (
     <Card>
       <CardItem>
@@ -49,11 +51,11 @@ const FoodCard = props => {
 
 export default class FoodList extends Component {
   render() {
-    console.log(this.props.navigation);
+ //  console.log(this.props.navigation.getParam('foodRecipes'));
 
     return (
       <>
-        <FoodCard navigate={this.props.navigation.navigate}></FoodCard>
+        <FoodCard navigate={this.props.navigation.navigate} foodRecipes={this.props.navigation.getParam("foodRecipes")}></FoodCard>
       </>
     );
   }

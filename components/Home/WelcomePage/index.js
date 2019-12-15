@@ -127,6 +127,10 @@ export default class WelcomePage extends Component {
           confirmText="Seç"
           searchPlaceholderText="Malzeme arayın"
           selectedText=" adet Seçildi"
+          onConfirm={()=>{
+          //  console.log("leeen confirm")
+          this.getFoodRecipe(this.state.selectedItems);
+          }}
         />
       </View>
         </View>
@@ -140,8 +144,10 @@ export default class WelcomePage extends Component {
           <Button
             primary
             onPress={() => {
-            //  this.props.navigation.navigate('FoodList');
-            this.getFoodRecipe(this.state.selectedItems);
+              this.props.navigation.navigate('FoodList',{
+                foodRecipes:this.state.foodRecipes
+              });
+            //this.getFoodRecipe(this.state.selectedItems);
             }}
             style={{marginBottom: 5}}>
             <Text>Yemek Bul</Text>
