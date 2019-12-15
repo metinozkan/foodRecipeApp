@@ -24,6 +24,7 @@ export const items = [
      
     ],
   },
+
     {name:'Baharat',
       id:2,
     children:[
@@ -31,9 +32,23 @@ export const items = [
         name:"tuz",
         id:9
       },
-     
 
     ]},
+    {name:'Et ve Süt ürünleri',
+      id:4,
+      children:[
+      {
+       name:"Süt",
+       id:3
+      },
+      {
+      name:"Yumurta",
+      id:8,
+     },
+     {
+      name:"Tereyağı",
+      id:10,
+     }]},
     {name:'Diğer',
       id:3,
     children:[
@@ -51,22 +66,7 @@ export const items = [
       }
 
     ]},
-    {name:'Et ve Süt ürünleri',
-      id:4,
-      children:[
-      {
-       name:"Süt",
-       id:3
-      },
-      {
-      name:"Yumurta",
-      id:8,
-     },
-     {
-      name:"Tereyağı",
-      id:10,
-     }
-]}
+    
 ];
 export const ingredientsItems=()=>{
   console.log("ingredietns dikkat");

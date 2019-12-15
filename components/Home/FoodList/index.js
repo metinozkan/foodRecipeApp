@@ -27,7 +27,7 @@ const foodRecipe=props.foodRecipes
           />
           <Body>
             <Text>{x.name}</Text>
-            <Text note>{x.ingredients}</Text>
+            <Text note style={{flexWrap: 'nowrap',padding:2,width:'100%'}}>{x.ingredients}</Text>
             <Text note>{x.time} {x.personCount}kişilik</Text>
           </Body>
 
