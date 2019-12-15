@@ -13,50 +13,68 @@ import {
   Left,
   Body,
   Right,
+  View
 } from 'native-base';
 const foodName = 'Tavuk Tantuni';
 const malzemeler = [''];
-const FoodCard =(props, {foodRecipes}) => {
+const FoodCard =(props) => {
 //  console.log(props.getParam('foodRecipes'));
-console.log(foodRecipes)
+//console.log(props.foodRecipes)
+const foodRecipe=props.foodRecipes
   return (
+    props.foodRecipes.map(x=>
+      {
+        return <>
     <Card>
       <CardItem>
         <Left>
-          <Thumbnail
+        
+         <Thumbnail
             source={{
-              uri:
-                'https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+              uri:x.photo
             }}
           />
-
           <Body>
-            <Text>{foodName}</Text>
-            <Text note>lavaş,tavuk,turşu</Text>
-            <Text note>52dk 4 kişilik</Text>
+            <Text>{x.name}</Text>
+            <Text note>{x.ingredients}</Text>
+            <Text note>{x.time} {x.personCount}kişilik</Text>
           </Body>
+
+        
         </Left>
         <Right>
           <Button
             onPress={() => {
-              props.navigate('FoodDetail');
+              props.navigate('FoodDetail',{
+                foodRecipe:foodRecipe.filter(y=>y.id==x.id)
+              });
             }}>
             <Text>Aç</Text>
           </Button>
         </Right>
       </CardItem>
     </Card>
+    </>
+  })
   );
 };
 
 export default class FoodList extends Component {
   render() {
- //  console.log(this.props.navigation.getParam('foodRecipes'));
-
+  //console.log(this.props.navigation.getParam('foodRecipes'));
+ // const foodRecipes=JSON.stringify(this.props.navigation.getParam('foodRecipes'));
+ const foodRecipes=this.props.navigation.getParam('foodRecipes');
+ 
+ //console.log(foodRecipes.map(x=>x.name))
+ //console.log(foodRecipes)
     return (
       <>
-        <FoodCard navigate={this.props.navigation.navigate} foodRecipes={this.props.navigation.getParam("foodRecipes")}></FoodCard>
-      </>
+
+
+      <FoodCard navigate={this.props.navigation.navigate} foodRecipes={foodRecipes} ></FoodCard> 
+        </>
+
     );
+  
   }
 }

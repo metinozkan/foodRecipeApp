@@ -145,8 +145,34 @@ export default class WelcomePage extends Component {
             primary
             onPress={() => {
               this.props.navigation.navigate('FoodList',{
-                foodRecipes:this.state.foodRecipes
-              });
+                foodRecipes:[
+                  {
+                      "id": 2,
+                      "name": "Domates Soslu Tortellini",
+                      "type": 2,
+                      "recipe": "Unu bir derin kabın içine alın. Ortasını havuz şeklinde açın. Yumurtaları ve eritilmiş tereyağı ilave edin.\n\nHamuru güzelce yoğurun. Ardından streç filmle sararak 30 dakika kadar buzdolabında dinlendirin.\n\nİç harcı için:\nDerin bir tencerenin içerisine tereyağını alın. Kıymayı ilave ederek güzelce kavurun. Üzerine tuz ilave edin. Karıştırıp ocaktan alın ve oda sıcaklığında soğumaya bırakın.\n\nDomates sosu için:\nBir sos tenceresinin içerisine tereyağını alın. Sarımsağı rendeleyerek içerisine ilave edin ve hafifçe soteleyin.\n\nArdından domatesleri ekleyin ve kıvam alana kadar yaklaşık 5-12 dakika kadar karıştırarak pişirin.\n\nKıvam aldığında ocaktan alın, tuz ve baharatlarını ilave ederek dinlenmeye bırakın.\n\nBirleştirme aşaması:\nHazırladığınız makarna hamurundan ceviz büyüklüğünde bezeler elde edin.\n\nHafif unlanmış tezgahın üzerinde bezeleri hafifçe açın.\n\nOrtasına harçtan ilave edin. Üzerini de yine aynı şekilde açılmış hamurla kapatın.\n\nYarım şeklinde kapatın ve uçlarından birleştirin. Tüm hamura ve harca bu işlemi uygulayın.\n\nArdından bol su dolu, hafif yağ damlatılmış ve tuz eklenmiş bir tencerenin içerisine hazırladığınız tortellini'leri ekleyin. Damak zevkinize göre al dante ya da tam pişmiş şekilde pişirin.\n\nÇıkarıp süzdürerek bir tabağın içine aktarın. Üzerine domates sosu gezdirerek ve peynir ekleyerek servis edin.",
+                      "photo": "https://st.depositphotos.com/3159685/4268/i/950/depositphotos_42682481-stock-photo-tortellini-with-tomato-sauce.jpg",
+                      "calorie": 322,
+                      "video": "https://www.youtube.com/watch?v=Q_B4hTaPZIU",
+                      "Ingredient": "6",
+                      "ingredients":"domates,soğan ",
+                      "time":"5dk",
+                      "personCount":"4"
+                  },
+                  {
+                    "id": 3,
+                    "name": "Salatalık",
+                    "type": 2,
+                    "recipe": "Unu bir derin kabın içine alın. Ortasını havuz şeklinde açın. Yumurtaları ve eritilmiş tereyağı ilave edin.\n\nHamuru güzelce yoğurun. Ardından streç filmle sararak 30 dakika kadar buzdolabında dinlendirin.\n\nİç harcı için:\nDerin bir tencerenin içerisine tereyağını alın. Kıymayı ilave ederek güzelce kavurun. Üzerine tuz ilave edin. Karıştırıp ocaktan alın ve oda sıcaklığında soğumaya bırakın.\n\nDomates sosu için:\nBir sos tenceresinin içerisine tereyağını alın. Sarımsağı rendeleyerek içerisine ilave edin ve hafifçe soteleyin.\n\nArdından domatesleri ekleyin ve kıvam alana kadar yaklaşık 5-12 dakika kadar karıştırarak pişirin.\n\nKıvam aldığında ocaktan alın, tuz ve baharatlarını ilave ederek dinlenmeye bırakın.\n\nBirleştirme aşaması:\nHazırladığınız makarna hamurundan ceviz büyüklüğünde bezeler elde edin.\n\nHafif unlanmış tezgahın üzerinde bezeleri hafifçe açın.\n\nOrtasına harçtan ilave edin. Üzerini de yine aynı şekilde açılmış hamurla kapatın.\n\nYarım şeklinde kapatın ve uçlarından birleştirin. Tüm hamura ve harca bu işlemi uygulayın.\n\nArdından bol su dolu, hafif yağ damlatılmış ve tuz eklenmiş bir tencerenin içerisine hazırladığınız tortellini'leri ekleyin. Damak zevkinize göre al dante ya da tam pişmiş şekilde pişirin.\n\nÇıkarıp süzdürerek bir tabağın içine aktarın. Üzerine domates sosu gezdirerek ve peynir ekleyerek servis edin.",
+                    "photo": "https://st.depositphotos.com/3159685/4268/i/950/depositphotos_42682481-stock-photo-tortellini-with-tomato-sauce.jpg",
+                    "calorie": 322,
+                    "video": "https://www.youtube.com/watch?v=Q_B4hTaPZIU",
+                    "Ingredient": "6",
+                    "ingredients":"domates,soğan,biber,salatalık,tuz ",
+                    "time":"5dk",
+                    "personCount":"4"
+                }
+                 ], });
             //this.getFoodRecipe(this.state.selectedItems);
             }}
             style={{marginBottom: 5}}>
