@@ -6,7 +6,7 @@ export const items = [
   // this is the parent or 'item'
   {
     name: 'Sebze',
-    id: 1,
+    id: 111,
     // these are the children or 'sub items'
     children: [
       {
@@ -44,7 +44,7 @@ export const items = [
     ],
   },
   {name:'Meyve',
-   id:2,
+   id:222,
   children:[
    {
     name:"Elma",
@@ -58,7 +58,7 @@ export const items = [
 
 ]},
     {name:'Baharat',
-      id:3,
+      id:333,
     children:[
       {
         name:"Tuz",
@@ -75,7 +75,7 @@ export const items = [
 
     ]},
     {name:'Et ve Süt ürünleri',
-      id:4,
+      id:444,
       children:[
       {
        name:"Süt",
@@ -101,7 +101,7 @@ export const items = [
     ]},
     
     {name:'Baklagil',
-    id:5,
+    id:555,
   children:[
     {
       name:"Pirinç",
@@ -123,7 +123,7 @@ export const items = [
   ]},
 
     {name:'Diğer',
-      id:6,
+      id:666,
     children:[
       {
         name:"Şeker",

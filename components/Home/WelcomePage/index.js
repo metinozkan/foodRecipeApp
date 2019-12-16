@@ -49,7 +49,7 @@ export default class WelcomePage extends Component {
       }),
     })
     .then((response)=>response.json()).then((responseJson)=>{
-    //  console.log(responseJson)
+    console.log(responseJson)
     this.setState({
       foodRecipes:responseJson
     })
@@ -75,8 +75,9 @@ export default class WelcomePage extends Component {
   //   });
   // }
   render() {
+    console.log("asdsad");
    // console.log("ögün secmişmi",this.state.selectedMeal);
-   // console.log(this.state.selectedItems);
+  console.log("+asdsad",this.state.selectedItems);
    // console.log(this.state.foodRecipes.filter(x=>x.type==this.state.selectedMeal));
     return (
       <ImageBackground
