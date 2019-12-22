@@ -1,8 +1,18 @@
-## Recipe app interface.
+## Recipe app :fork_and_knife: :cocktail: :pizza: :cookie:
 
 _Made with NativeBase & ReactNavigation_
 
-## Installation
+## Screenshots
+
+<div align="left" style="margin-bottom:1em">
+    <img src="./screenshots/screenshot1.jpeg" width="auto" height="300"/>
+    <img src="./screenshots/screenshot2.jpeg" width="auto" height="300"/>
+    <img src="./screenshots/screenshot3.jpeg" width="auto" height="300"/>
+    <img src="./screenshots/screenshot4.jpeg" width="auto" height="300"/>
+    <img src="./screenshots/screenshot5.jpeg" width="auto" height="300"/>
+</div>
+
+## Installation :arrow_down:
 
 - git clone
 - npm start
